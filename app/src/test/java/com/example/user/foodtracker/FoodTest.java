@@ -15,7 +15,7 @@ public class FoodTest {
 
     @Before
     public void before() {
-     food = new Food("Big Mac", 489);
+        food = new Food("Big Mac", 489);
     }
 
     @Test
@@ -24,7 +24,25 @@ public class FoodTest {
     }
 
     @Test
+    public void canSetName() {
+        food.setName("Bolognese");
+        assertEquals("Bolognese", food.getName());
+    }
+
+    @Test
     public void canGetCalories() {
         assertEquals(489, food.getCalories());
     }
+
+    @Test
+    public void canSetCalories() {
+        food.setCalories(563);
+        assertEquals(563, food.getCalories());
+    }
+
+    @Test
+    public void canOutputAsString() {
+        assertEquals("Big Mac: 489kcal", food.toString());
+    }
+
 }

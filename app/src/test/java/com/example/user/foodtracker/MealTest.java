@@ -12,21 +12,26 @@ import static junit.framework.Assert.assertEquals;
 public class MealTest {
 
     Meal meal;
-    Food toast;
-    Food apple;
-    Food milk;
+    Food entry1;
+    Food entry2;
+    Food entry3;
 
     @Before
     public void before() {
         meal = new Meal();
-        toast = new Food("toast", 93);
+        entry1 = new Food("toast", 93);
+        entry2 = new Food("apple", 75);
+        meal.addFood(entry1);
     }
 
     @Test
-    public void canAddFoodToMeal() {
-        meal.add(toast);
-        assertEquals(1, meal.foodCount());
+    public void canAddFood() {
+        meal.addFood(entry2);
+        assertEquals(2, meal.foodCount());
     }
 
-
+    @Test
+    public void canGetTotalCalories() {
+        assertEquals(93, meal.getTotalCalories());
+}
 }

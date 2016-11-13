@@ -7,25 +7,33 @@ import java.util.ArrayList;
  */
 
 public class Meal {
-    protected ArrayList<Food> mFood;
+    private ArrayList<Food> foods;
 
     public Meal() {
-        mFood = new ArrayList<Food>();
+        this.foods = new ArrayList<Food>();
     }
 
 //    public Meal(ArrayList<String> existingMeal) {
 //        mFood = new ArrayList<String>(existingMeal);
 //    }
 
-    public void add(Food food) {
-        mFood.add(food);
+    public void addFood(Food food) {
+        foods.add(food);
     }
 
     public int foodCount() {
-        return mFood.size();
+        return foods.size();
     }
 
-
-
-
+    public int getTotalCalories() {
+        int total = 0;
+        for (Food food : foods) {
+            total += food.getCalories();
+        }
+        return total;
+    }
 }
+
+
+
+
