@@ -22,16 +22,17 @@ public class MealTest {
         entry1 = new Food("toast", 93);
         entry2 = new Food("apple", 75);
         meal.addFood(entry1);
+        meal.addFood(entry2);
     }
 
     @Test
     public void canAddFood() {
-        meal.addFood(entry2);
-        assertEquals(2, meal.foodCount());
+        meal.addFood(entry3);
+        assertEquals(3, meal.foodCount());
     }
 
     @Test
     public void canGetTotalCalories() {
-        assertEquals(93, meal.getTotalCalories());
+        assertEquals(168, meal.getTotalCalories());
 }
 }
