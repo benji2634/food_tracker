@@ -26,6 +26,11 @@ public class MealTest {
     }
 
     @Test
+    public void canGetFoods() {
+        assertEquals(entry1, meal.getFoods().get(0));
+    }
+
+    @Test
     public void canAddFood() {
         meal.addFood(entry3);
         assertEquals(3, meal.foodCount());
@@ -34,5 +39,10 @@ public class MealTest {
     @Test
     public void canGetTotalCalories() {
         assertEquals(168, meal.getTotalCalories());
-}
+    }
+
+    @Test
+    public void canDisplayMeal() {
+        assertEquals("toast: 93kcal, apple: 75kcal", meal.toString());
+    }
 }
