@@ -2,6 +2,7 @@ package com.example.user.foodtracker;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 /**
  * Created by user on 13/11/2016.
@@ -9,17 +10,19 @@ import java.util.Collections;
 
 public class Day {
     private String date;
-    private ArrayList<Meal> breakfast;
-    private ArrayList<Meal> lunch;
-    private ArrayList<Meal> dinner;
-    private ArrayList<Meal> snack;
+    private HashMap<String, Meal> day;
+//    private ArrayList<Meal> breakfast;
+//    private ArrayList<Meal> lunch;
+//    private ArrayList<Meal> dinner;
+//    private ArrayList<Meal> snack;
 
     public Day(String date) {
         this.date = date;
-        this.breakfast = new ArrayList<Meal>();
-        this.lunch = new ArrayList<Meal>();
-        this.dinner = new ArrayList<Meal>();
-        this.snack = new ArrayList<Meal>();
+        this.day = new HashMap<>();
+//        this.breakfast = new ArrayList<Meal>();
+//        this.lunch = new ArrayList<Meal>();
+//        this.dinner = new ArrayList<Meal>();
+//        this.snack = new ArrayList<Meal>();
     }
 
     public String getDate() {
@@ -30,52 +33,60 @@ public class Day {
         this.date = date;
     }
 
-    public ArrayList<Meal> getBreakfast() {
-        return this.breakfast;
+    public Meal getBreakfast() {
+        return this.day.get("Breakfast");
     }
 
     public void addBreakfast(Meal meal) {
-        breakfast.add(meal);
+        day.put("Breakfast", meal);
     }
 
     public int breakfastCount() {
-        return breakfast.size();
+        Meal result = getBreakfast();
+        return result.foodCount();
     }
 
-//    public String displayBreakfast() {
-//        for (int i = 0; i < breakfast.size(); i++) {
-//            Meal myBreakfast = breakfast.get(i);
-//            return "Breakfast: " + myBreakfast.toString();
-//        }
-//        return null;
-//    }
+    public Meal getLunch() {
+        return this.day.get("Lunch");
+    }
 
     public void addLunch(Meal meal) {
-        lunch.add(meal);
+        day.put("Lunch", meal);
     }
 
     public int lunchCount() {
-        return lunch.size();
+        Meal result = getLunch();
+        return result.foodCount();
+    }
+
+    public Meal getDinner() {
+        return this.day.get("Dinner");
     }
 
     public void addDinner(Meal meal) {
-        dinner.add(meal);
+        day.put("Dinner", meal);
     }
 
     public int dinnerCount() {
-        return dinner.size();
+        Meal result = getDinner();
+        return result.foodCount();
     }
 
+    public Meal getSnack() {
+    return this.day.get("Snack");
+}
+
     public void addSnack(Meal meal) {
-        snack.add(meal);
+        day.put("Snack", meal);
     }
 
     public int snackCount() {
-        return snack.size();
+        Meal result = getSnack();
+        return result.foodCount();
     }
-
-    public int countAllMeals() {
-        int total = breakfast.size() + lunch.size() + dinner.size() + snack.size();
-        return total;
-    }
+//
+//    public int countAllMeals() {
+//        int total = breakfast.size() + lunch.size() + dinner.size() + snack.size();
+//        return total;
+//    }
 }

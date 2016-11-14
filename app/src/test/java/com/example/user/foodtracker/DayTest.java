@@ -12,76 +12,93 @@ import static junit.framework.Assert.assertEquals;
 
 public class DayTest {
     Day day;
-    Meal entry1;
-    Meal entry2;
-    Meal entry3;
-    Meal entry4;
-    Meal entry5;
-    Meal entry6;
-    Meal entry7;
-    Meal entry8;
-
+    Meal breakfast;
+    Meal lunch;
+    Meal dinner;
+    Meal snack;
 
     @Before
     public void before() {
         day = new Day("Monday 14th November");
-        entry1 = new Meal();
-        entry2 = new Meal();
-        entry3 = new Meal();
-        entry4 = new Meal();
-        entry5 = new Meal();
-        entry6 = new Meal();
-        entry7 = new Meal();
-        entry8 = new Meal();
-        day.addBreakfast(entry1);
-        day.addLunch(entry3);
-        day.addDinner(entry5);
-        day.addSnack(entry7);
+
+        breakfast = new Meal();
+        Food breakfastEntry = new Food("apple", 75);
+        breakfast.addFood(breakfastEntry);
+        day.addBreakfast(breakfast);
+
+        lunch = new Meal();
+        Food lunchEntry = new Food("chicken wrap", 264);
+        lunch.addFood(lunchEntry);
+        day.addLunch(lunch);
+
+        dinner = new Meal();
+        Food dinnerEntry = new Food("spaghetti bolognese", 512);
+        dinner.addFood(dinnerEntry);
+        day.addDinner(dinner);
+
+        snack = new Meal();
+        Food snackEntry = new Food("yoghurt", 101);
+        snack.addFood(snackEntry);
+        day.addSnack(snack);
     }
 
     @Test
-    public void canGetName() {
+    public void canGetDate() {
         Assert.assertEquals("Monday 14th November", day.getDate());
     }
 
     @Test
-    public void canSetName() {
+    public void canSetDate() {
         day.setDate("Tuesday 15th November");
         Assert.assertEquals("Tuesday 15th November", day.getDate());
     }
 
     @Test
     public void canGetBreakfast() {
-        assertEquals(entry1, day.getBreakfast());
+        assertEquals(breakfast, day.getBreakfast());
     }
 
     @Test
-    public void canAddBreakfast() {
-        day.addBreakfast(entry2);
+    public void canAddMoreFoodToBreakfast() {
+        Food breakfastEntry2 = new Food("Muesli", 243);
+        day.getBreakfast().addFood(breakfastEntry2);
         assertEquals(2, day.breakfastCount());
     }
 
     @Test
-    public void canAddLunch() {
-        day.addLunch(entry4);
+    public void canGetLunch() {
+        assertEquals(lunch, day.getLunch());
+    }
+
+    @Test
+    public void canAddMoreFoodToLunch() {
+        Food lunchEntry2 = new Food("protein bar", 199);
+        day.getLunch().addFood(lunchEntry2);
         assertEquals(2, day.lunchCount());
     }
 
     @Test
-    public void canAddDinner() {
-        day.addDinner(entry6);
+    public void canGetDinner() {
+        assertEquals(dinner, day.getDinner());
+    }
+
+    @Test
+    public void canAddMoreFoodToDinner() {
+        Food dinnerEntry2 = new Food("chicken wings", 415);
+        day.getDinner().addFood(dinnerEntry2);
         assertEquals(2, day.dinnerCount());
     }
 
     @Test
-    public void canAddSnack() {
-        day.addSnack(entry8);
-        assertEquals(2, day.snackCount());
+    public void canGetSnack() {
+        assertEquals(snack, day.getSnack());
     }
 
     @Test
-    public void canCountAllMeals() {
-        assertEquals(4, day.countAllMeals());
+    public void canAddMoreFoodToSnack() {
+        Food snackEntry2 = new Food("almonds", 102);
+        day.getSnack().addFood(snackEntry2);
+        assertEquals(2, day.snackCount());
     }
 
 }
