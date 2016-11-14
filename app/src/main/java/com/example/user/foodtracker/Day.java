@@ -99,6 +99,11 @@ public class Day {
         return total;
     }
 
+    public int caloriesRemaining() {
+        int result = getCalorieLimit() - calorieCount();
+        return result;
+    }
+
     @Override
     public String toString() {
         String message = "";

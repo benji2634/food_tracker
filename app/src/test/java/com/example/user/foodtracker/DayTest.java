@@ -123,6 +123,11 @@ public class DayTest {
     }
 
     @Test
+    public void canCountCaloriesRemaining() {
+        assertEquals(1848, day.caloriesRemaining());
+    }
+
+    @Test
     public void canDisplayMeal() {
         String result = "apple: 75kcal, chicken wrap: 264kcal, spaghetti bolognese: 512kcal, yoghurt: 101kcal";
         assertEquals(result, day.toString());
