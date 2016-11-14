@@ -19,7 +19,7 @@ public class DayTest {
 
     @Before
     public void before() {
-        day = new Day("Monday 14th November");
+        day = new Day("Monday 14th November", 2800);
 
         breakfast = new Meal();
         Food breakfastEntry = new Food("apple", 75);
@@ -44,13 +44,24 @@ public class DayTest {
 
     @Test
     public void canGetDate() {
-        Assert.assertEquals("Monday 14th November", day.getDate());
+        assertEquals("Monday 14th November", day.getDate());
     }
 
     @Test
     public void canSetDate() {
         day.setDate("Tuesday 15th November");
-        Assert.assertEquals("Tuesday 15th November", day.getDate());
+        assertEquals("Tuesday 15th November", day.getDate());
+    }
+
+    @Test
+    public void canGetCalorieLimit() {
+        assertEquals(2800, day.getCalorieLimit());
+    }
+
+    @Test
+    public void canSetCalorieLimit() {
+        day.setCalorieLimit(2300);
+        assertEquals(2300, day.getCalorieLimit());
     }
 
     @Test

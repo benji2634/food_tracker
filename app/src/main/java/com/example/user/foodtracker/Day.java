@@ -10,10 +10,12 @@ import java.util.LinkedHashMap;
 public class Day {
     private String date;
     private LinkedHashMap<String, Meal> day;
+    private int calorieLimit;
 
-    public Day(String date) {
+    public Day(String date, int calorieLimit) {
         this.date = date;
         this.day = new LinkedHashMap<>();
+        this.calorieLimit = calorieLimit;
     }
 
     public String getDate() {
@@ -22,6 +24,14 @@ public class Day {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public int getCalorieLimit() {
+        return this.calorieLimit;
+    }
+
+    public void setCalorieLimit(int calorieLimit) {
+        this.calorieLimit = calorieLimit;
     }
 
     public Meal getBreakfast() {

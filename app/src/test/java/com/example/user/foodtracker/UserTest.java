@@ -29,9 +29,9 @@ public class UserTest {
         meal1.addFood(entry1);
         meal2 = new Meal();
         meal2.addFood(entry2);
-        day1 = new Day("Monday");
+        day1 = new Day("Monday", 2800);
         day1.addBreakfast(meal1);
-        day2 = new Day("Tuesday");
+        day2 = new Day("Tuesday", 2800);
         day2.addLunch(meal2);
         user.addDay(day1);
     }
