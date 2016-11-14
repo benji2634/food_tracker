@@ -111,4 +111,10 @@ public class DayTest {
         assertEquals(952, day.calorieCount());
     }
 
+    @Test
+    public void canDisplayMeal() {
+        String result = "apple: 75kcal, chicken wrap: 264kcal, spaghetti bolognese: 512kcal, yoghurt: 101kcal";
+        assertEquals(result, day.toString());
+    }
+
 }

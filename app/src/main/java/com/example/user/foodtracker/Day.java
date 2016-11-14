@@ -1,6 +1,7 @@
 package com.example.user.foodtracker;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  * Created by user on 13/11/2016.
@@ -8,11 +9,11 @@ import java.util.HashMap;
 
 public class Day {
     private String date;
-    private HashMap<String, Meal> day;
+    private LinkedHashMap<String, Meal> day;
 
     public Day(String date) {
         this.date = date;
-        this.day = new HashMap<>();
+        this.day = new LinkedHashMap<>();
     }
 
     public String getDate() {
@@ -86,6 +87,16 @@ public class Day {
            total += meal.getTotalCalories();
        }
         return total;
+    }
+
+    @Override
+    public String toString() {
+        String message = "";
+        for (Meal meal : day.values()) {
+            message += meal + ", ";
+        }
+        String result = message.substring(0, message.length() - 2);
+        return result;
     }
 
 }

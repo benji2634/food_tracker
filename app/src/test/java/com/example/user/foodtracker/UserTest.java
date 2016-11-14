@@ -69,9 +69,4 @@ public class UserTest {
         assertEquals(2, user.dayCount());
     }
 
-//    @Test
-//    public void canAddFoodToMealAndGetTotalCalories() {
-//        user.addFoodToMeal(food);
-//        assertEquals(734, user.getTotalCalories());
-//    }
 }
