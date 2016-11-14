@@ -22,7 +22,7 @@ public class UserTest {
 
     @Before
     public void before() {
-        user = new User("Alex");
+        user = new User("Alex", 35);
         entry1 = new Food("toast", 93);
         entry2 = new Food("apple", 75);
         meal1 = new Meal();
@@ -45,6 +45,17 @@ public class UserTest {
     public void canSetName() {
         user.setName("Ross");
         assertEquals("Ross", user.getName());
+    }
+
+    @Test
+    public void canGetAge() {
+        assertEquals(35, user.getAge());
+    }
+
+    @Test
+    public void canSetAge() {
+        user.setAge(36);
+        assertEquals(36, user.getAge());
     }
 
     @Test

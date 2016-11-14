@@ -9,10 +9,12 @@ import java.util.HashMap;
 
 public class User {
     private String name;
+    private int age;
     private ArrayList<Day> days;
 
-    public User(String name) {
+    public User(String name, int age) {
         this.name = name;
+        this.age = age;
         this.days = new ArrayList<Day>();
     }
 
@@ -22,6 +24,14 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public ArrayList<Day> getDays() {
