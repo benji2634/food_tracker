@@ -1,7 +1,5 @@
 package com.example.user.foodtracker;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 
 /**
@@ -11,18 +9,10 @@ import java.util.HashMap;
 public class Day {
     private String date;
     private HashMap<String, Meal> day;
-//    private ArrayList<Meal> breakfast;
-//    private ArrayList<Meal> lunch;
-//    private ArrayList<Meal> dinner;
-//    private ArrayList<Meal> snack;
 
     public Day(String date) {
         this.date = date;
         this.day = new HashMap<>();
-//        this.breakfast = new ArrayList<Meal>();
-//        this.lunch = new ArrayList<Meal>();
-//        this.dinner = new ArrayList<Meal>();
-//        this.snack = new ArrayList<Meal>();
     }
 
     public String getDate() {
@@ -84,9 +74,18 @@ public class Day {
         Meal result = getSnack();
         return result.foodCount();
     }
-//
-//    public int countAllMeals() {
-//        int total = breakfast.size() + lunch.size() + dinner.size() + snack.size();
-//        return total;
-//    }
+
+    public int mealCount() {
+        int result = breakfastCount() + lunchCount() + dinnerCount() + snackCount();
+        return result;
+    }
+
+    public int calorieCount() {
+       int total = 0;
+       for (Meal meal : day.values()) {
+           total += meal.getTotalCalories();
+       }
+        return total;
+    }
+
 }

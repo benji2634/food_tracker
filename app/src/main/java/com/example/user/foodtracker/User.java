@@ -1,16 +1,19 @@
 package com.example.user.foodtracker;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Created by user on 13/11/2016.
  */
 
 public class User {
     private String name;
-    private Meal meal;
+    private ArrayList<Day> days;
 
-    public User(String name, Meal meal) {
+    public User(String name) {
         this.name = name;
-        this.meal = meal;
+        this.days = new ArrayList<Day>();
     }
 
     public String getName() {
@@ -21,12 +24,16 @@ public class User {
         this.name = name;
     }
 
-    public void addFoodToMeal(Food food) {
-        meal.addFood(food);
+    public ArrayList<Day> getDays() {
+        return this.days;
     }
 
-
-    public int getTotalCalories() {
-        return meal.getTotalCalories();
+    public void addDay(Day day) {
+        days.add(day);
     }
+
+    public int dayCount() {
+        return days.size();
+    }
+
 }

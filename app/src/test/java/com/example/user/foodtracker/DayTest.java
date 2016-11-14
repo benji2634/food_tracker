@@ -101,4 +101,14 @@ public class DayTest {
         assertEquals(2, day.snackCount());
     }
 
+    @Test
+    public void canCountAllMeals() {
+        assertEquals(4, day.mealCount());
+    }
+
+    @Test
+    public void canCountTotalCaloriesForADay() {
+        assertEquals(952, day.calorieCount());
+    }
+
 }
