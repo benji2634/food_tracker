@@ -1,5 +1,6 @@
 package com.example.user.foodtracker;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -67,6 +68,11 @@ public class UserTest {
     public void canAddDay() {
         user.addDay(day2);
         assertEquals(2, user.dayCount());
+    }
+
+    @Test
+    public void canOutputAsString() {
+        assertEquals("Name: Alex  Age: 35", user.toString());
     }
 
 }

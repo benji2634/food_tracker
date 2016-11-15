@@ -28,9 +28,12 @@ public class MainActivity extends AppCompatActivity {
 
         mUserInfoText = (TextView) findViewById(R.id.user_info_text);
 
+        User user = new User("Alex", 35);
+        String userInfo = user.toString();
+        mUserInfoText.setText(userInfo);
+
         mDaysListView = (ListView)findViewById(R.id.my_days_listview);
 
-        User user = new User("Alex", 35);
         Day day1 = new Day("Monday 14th November", 2800);
         Day day2 = new Day("Tuesday 15th November", 2300);
         Day day3 = new Day("Wednesday 16th November", 2300);

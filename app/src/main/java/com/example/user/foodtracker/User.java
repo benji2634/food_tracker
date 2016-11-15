@@ -54,4 +54,9 @@ public class User {
         return days.size();
     }
 
+    @Override
+    public String toString() {
+        return "Name: " + name + "  " + "Age: " + age;
+    }
+
 }
