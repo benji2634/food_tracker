@@ -3,12 +3,6 @@ package com.example.user.foodtracker;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.*;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -20,13 +14,9 @@ import java.util.ArrayList;
 public class DayActivity extends AppCompatActivity {
 
     TextView mDayInfoText;
-    TextView mBreakfastHeader;
     TextView mBreakfastFoods;
-    TextView mLunchHeader;
     TextView mLunchFoods;
-    TextView mDinnerHeader;
     TextView mDinnerFoods;
-    TextView mSnackHeader;
     TextView mSnackFoods;
 
     @Override
@@ -41,28 +31,36 @@ public class DayActivity extends AppCompatActivity {
         String date = extras.getString("date");
         mDayInfoText.setText(date);
 
-        mBreakfastHeader = (TextView) findViewById(R.id.breakfast_header);
-
         mBreakfastFoods = (TextView) findViewById(R.id.breakfast_foods);
         ArrayList<String> breakfastFoods = extras.getStringArrayList("breakfast_foods");
-        mBreakfastFoods.setText(breakfastFoods.get(0));
-
-        mLunchHeader = (TextView) findViewById(R.id.lunch_header);
+        String breakfastString = "";
+        for (String food : breakfastFoods) {
+            breakfastString += food + "\n";
+        }
+        mBreakfastFoods.setText(breakfastString);
 
         mLunchFoods = (TextView) findViewById(R.id.lunch_foods);
-        String lunchFoods = extras.getString("lunch_foods");
-        mLunchFoods.setText(lunchFoods);
-
-        mDinnerHeader = (TextView) findViewById(R.id.dinner_header);
+        ArrayList<String> lunchFoods = extras.getStringArrayList("lunch_foods");
+        String lunchString = "";
+        for (String food : lunchFoods) {
+            lunchString += food + "\n";
+        }
+        mLunchFoods.setText(lunchString);
 
         mDinnerFoods = (TextView) findViewById(R.id.dinner_foods);
-        String dinnerFoods = extras.getString("dinner_foods");
-        mDinnerFoods.setText(dinnerFoods);
-
-        mSnackHeader = (TextView) findViewById(R.id.snack_header);
+        ArrayList<String> dinnerFoods = extras.getStringArrayList("dinner_foods");
+        String dinnerString = "";
+        for (String food : dinnerFoods) {
+            dinnerString += food + "\n";
+        }
+        mDinnerFoods.setText(dinnerString);
 
         mSnackFoods = (TextView) findViewById(R.id.snack_foods);
-        String snackFoods = extras.getString("snack_foods");
-        mSnackFoods.setText(snackFoods);
+        ArrayList<String> snackFoods = extras.getStringArrayList("snack_foods");
+        String snackString = "";
+        for (String food : snackFoods) {
+            snackString += food + "\n";
+        }
+        mSnackFoods.setText(snackString);
     }
 }

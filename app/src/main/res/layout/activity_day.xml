@@ -17,7 +17,7 @@
         android:textSize="20dp"
         android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="20dp"
-        android:text=""
+        android:text="@string/breakfast_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -35,7 +35,7 @@
         android:textSize="20dp"
         android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="20dp"
-        android:text=""
+        android:text="@string/lunch_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -53,7 +53,7 @@
         android:textSize="20dp"
         android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="20dp"
-        android:text=""
+        android:text="@string/dinner_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -71,7 +71,7 @@
         android:textSize="20dp"
         android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="20dp"
-        android:text=""
+        android:text="@string/snack_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
