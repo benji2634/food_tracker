@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.util.Log;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -17,14 +18,17 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView mListView;
+    TextView mUserInfoText;
+    ListView mDaysListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mListView = (ListView)findViewById(R.id.my_listview);
+        mUserInfoText = (TextView) findViewById(R.id.user_info_text);
+
+        mDaysListView = (ListView)findViewById(R.id.my_days_listview);
 
         ArrayList<String> array = new ArrayList<String>();
         array.add("Tom");
@@ -33,12 +37,12 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
 
-        mListView.setAdapter(adapter);
+        mDaysListView.setAdapter(adapter);
 
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mDaysListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selected = (String)mListView.getItemAtPosition(position);
+                String selected = (String)mDaysListView.getItemAtPosition(position);
                 Log.d("ListView:", selected + " selected");
             }
         });
