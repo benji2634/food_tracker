@@ -38,6 +38,14 @@ public class User {
         return this.days;
     }
 
+    public ArrayList<String> getDateString() {
+        ArrayList<String> dayName = new ArrayList<>();
+        for (Day day : days) {
+            dayName.add(day.getDate());
+        }
+        return dayName;
+    }
+
     public void addDay(Day day) {
         days.add(day);
     }

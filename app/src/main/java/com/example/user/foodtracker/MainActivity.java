@@ -30,12 +30,24 @@ public class MainActivity extends AppCompatActivity {
 
         mDaysListView = (ListView)findViewById(R.id.my_days_listview);
 
-        ArrayList<String> array = new ArrayList<String>();
-        array.add("Tom");
-        array.add("Dick");
-        array.add("Harry");
+        User user = new User("Alex", 35);
+        Day day1 = new Day("Monday 14th November", 2800);
+        Day day2 = new Day("Tuesday 15th November", 2300);
+        Day day3 = new Day("Wednesday 16th November", 2300);
+        Day day4 = new Day("Thursday 17th November", 2300);
+        Day day5 = new Day("Friday 18th November", 2800);
+        Day day6 = new Day("Saturday 19th November", 2300);
+        Day day7 = new Day("Sunday 20th November", 2300);
+        user.addDay(day1);
+        user.addDay(day2);
+        user.addDay(day3);
+        user.addDay(day4);
+        user.addDay(day5);
+        user.addDay(day6);
+        user.addDay(day7);
+        ArrayList<String> days = user.getDateString();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, days);
 
         mDaysListView.setAdapter(adapter);
 
@@ -47,24 +59,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-   /* private ArrayList<String> setUpStringsList() {
-        ArrayList<String> stringsList = new ArrayList<String>();
-
-        String[] strings = {
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-        };
-
-        for (int i = 0; i < strings.length; i++) {
-            stringsList.add(strings[i]);
-        }
-        return stringsList;
-    } */
 
 }
