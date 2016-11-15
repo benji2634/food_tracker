@@ -22,6 +22,10 @@ public class Day {
         return this.date;
     }
 
+    public LinkedHashMap<String, Meal> getDay() {
+        return day;
+    }
+
     public void setDate(String date) {
         this.date = date;
     }

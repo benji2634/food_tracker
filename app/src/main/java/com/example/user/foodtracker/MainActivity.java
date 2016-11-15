@@ -1,5 +1,6 @@
 package com.example.user.foodtracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.*;
@@ -21,6 +22,14 @@ public class MainActivity extends AppCompatActivity {
     TextView mUserInfoText;
     ListView mDaysListView;
 
+    User user;
+    String date;
+    String foods;
+    Meal breakfast;
+    Meal lunch;
+    Meal dinner;
+    Meal snack;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         mUserInfoText = (TextView) findViewById(R.id.user_info_text);
 
-        User user = new User("Alex", 35);
+        user = new User("Alex", 35);
         String userInfo = user.toString();
         mUserInfoText.setText(userInfo);
 
@@ -41,6 +50,27 @@ public class MainActivity extends AppCompatActivity {
         Day day5 = new Day("Friday 18th November", 2800);
         Day day6 = new Day("Saturday 19th November", 2300);
         Day day7 = new Day("Sunday 20th November", 2300);
+
+        breakfast = new Meal();
+        final Food breakfastEntry = new Food("apple", 75);
+        breakfast.addFood(breakfastEntry);
+        day1.addBreakfast(breakfast);
+
+        lunch = new Meal();
+        Food lunchEntry = new Food("chicken wrap", 264);
+        lunch.addFood(lunchEntry);
+        day1.addLunch(lunch);
+
+        dinner = new Meal();
+        Food dinnerEntry = new Food("spaghetti bolognese", 512);
+        dinner.addFood(dinnerEntry);
+        day1.addDinner(dinner);
+
+        snack = new Meal();
+        Food snackEntry = new Food("yoghurt", 101);
+        snack.addFood(snackEntry);
+        day1.addSnack(snack);
+
         user.addDay(day1);
         user.addDay(day2);
         user.addDay(day3);
@@ -48,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         user.addDay(day5);
         user.addDay(day6);
         user.addDay(day7);
+
         ArrayList<String> days = user.getDateString();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, days);
@@ -57,8 +88,43 @@ public class MainActivity extends AppCompatActivity {
         mDaysListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selected = (String)mDaysListView.getItemAtPosition(position);
-                Log.d("ListView:", selected + " selected");
+//                String selected = (String)mDaysListView.getItemAtPosition(position);
+//                Log.d("DaysListView:", selected + " selected");
+                Log.d("DayListView:", Integer.toString(position));
+
+                date = user.getDays().get(position).getDate();
+//                ArrayList<String> dayTimes = (ArrayList<String>) user.getDays().get(position).getDay().keySet();
+
+                ArrayList<String> breakfastFoods = new ArrayList<String>();
+                for(Food food : user.getDays().get(position).getBreakfast().getFoods()){
+                    breakfastFoods.add(food.toString());
+                }
+
+                ArrayList<String> lunchFoods = new ArrayList<String>();
+                for(Food food : user.getDays().get(position).getLunch().getFoods()){
+                    lunchFoods.add(food.toString());
+                }
+
+                ArrayList<String> dinnerFoods = new ArrayList<String>();
+                for(Food food : user.getDays().get(position).getDinner().getFoods()){
+                    dinnerFoods.add(food.toString());
+                }
+
+                ArrayList<String> snackFoods = new ArrayList<String>();
+                for(Food food : user.getDays().get(position).getSnack().getFoods()){
+                    snackFoods.add(food.toString());
+                }
+
+                foods = user.getDays().get(position).getDay().toString();
+
+                Intent intent = new Intent(MainActivity.this, DayActivity.class);
+                intent.putExtra("date", date);
+                intent.putStringArrayListExtra("breakfast_foods", breakfastFoods);
+                intent.putStringArrayListExtra("lunch_foods", lunchFoods);
+                intent.putStringArrayListExtra("dinner_foods", dinnerFoods);
+                intent.putStringArrayListExtra("snack_foods", snackFoods);
+                startActivity(intent);
+
             }
         });
     }
