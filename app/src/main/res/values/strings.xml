@@ -3,6 +3,7 @@
     <string name="user_info_text"></string>
     <string name="day_info_text"></string>
     <string name="day_activity_title"></string>
+    <string name="calorie_limit"></string>
     <string name="breakfast_header">Breakfast</string>
     <string name="breakfast_foods"></string>
     <string name="lunch_header">Lunch</string>

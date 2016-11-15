@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     User user;
     String date;
+    int calorieLimit;
     String foods;
     Meal breakfast;
     Meal lunch;
@@ -52,8 +53,10 @@ public class MainActivity extends AppCompatActivity {
         Day day7 = new Day("Sunday 20th November", 2300);
 
         breakfast = new Meal();
-        final Food breakfastEntry = new Food("apple", 75);
-        breakfast.addFood(breakfastEntry);
+        Food breakfastEntry1 = new Food("porridge", 289);
+        breakfast.addFood(breakfastEntry1);
+        Food breakfastEntry2 = new Food("orange juice", 87);
+        breakfast.addFood(breakfastEntry2);
         day1.addBreakfast(breakfast);
 
         lunch = new Meal();
@@ -93,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("DayListView:", Integer.toString(position));
 
                 date = user.getDays().get(position).getDate();
-//                ArrayList<String> dayTimes = (ArrayList<String>) user.getDays().get(position).getDay().keySet();
+                calorieLimit = user.getDays().get(position).getCalorieLimit();
 
                 ArrayList<String> breakfastFoods = new ArrayList<String>();
                 for(Food food : user.getDays().get(position).getBreakfast().getFoods()){
@@ -119,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(MainActivity.this, DayActivity.class);
                 intent.putExtra("date", date);
+                intent.putExtra("calorie_limit", calorieLimit);
                 intent.putStringArrayListExtra("breakfast_foods", breakfastFoods);
                 intent.putStringArrayListExtra("lunch_foods", lunchFoods);
                 intent.putStringArrayListExtra("dinner_foods", dinnerFoods);

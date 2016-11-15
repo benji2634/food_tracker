@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class DayActivity extends AppCompatActivity {
 
     TextView mDayInfoText;
+    TextView mCalorieLimit;
     TextView mBreakfastFoods;
     TextView mLunchFoods;
     TextView mDinnerFoods;
@@ -30,6 +31,10 @@ public class DayActivity extends AppCompatActivity {
         Bundle extras = intent.getExtras();
         String date = extras.getString("date");
         mDayInfoText.setText(date);
+
+        mCalorieLimit = (TextView) findViewById(R.id.calorie_limit);
+        int calorieLimit = extras.getInt("calorie_limit");
+        mCalorieLimit.setText(Integer.toString(calorieLimit));
 
         mBreakfastFoods = (TextView) findViewById(R.id.breakfast_foods);
         ArrayList<String> breakfastFoods = extras.getStringArrayList("breakfast_foods");
