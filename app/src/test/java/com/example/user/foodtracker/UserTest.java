@@ -72,7 +72,7 @@ public class UserTest {
 
     @Test
     public void canOutputAsString() {
-        assertEquals("Name: Alex  Age: 35", user.toString());
+        assertEquals("Name: Alex\nAge: 35", user.toString());
     }
 
 }
