@@ -16,13 +16,13 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String INTEGER_TYPE = " INTEGER";
     private static final String COMMA_SEP = ",";
     private static final String SQL_CREATE_ENTRIES =
-            "CREATE TABLE " + DbContract.FeedEntry.TABLE_NAME + " (" +
-                    DbContract.FeedEntry._ID + " INTEGER PRIMARY KEY," +
-                    DbContract.FeedEntry.NAME + TEXT_TYPE + COMMA_SEP +
-                    DbContract.FeedEntry.CALORIES + INTEGER_TYPE + " )";
+            "CREATE TABLE " + DbContract.FoodEntry.TABLE_NAME + " (" +
+                    DbContract.FoodEntry._ID + " INTEGER PRIMARY KEY," +
+                    DbContract.FoodEntry.NAME + TEXT_TYPE + COMMA_SEP +
+                    DbContract.FoodEntry.CALORIES + INTEGER_TYPE + " )";
 
     private static final String SQL_DELETE_ENTRIES =
-            "DROP TABLE IF EXISTS " + DbContract.FeedEntry.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + DbContract.FoodEntry.TABLE_NAME;
 
     public DbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

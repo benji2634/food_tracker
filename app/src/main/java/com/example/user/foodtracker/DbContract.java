@@ -12,9 +12,9 @@ public final class DbContract {
     private DbContract() {}
 
     /* Inner class that defines the table contents */
-    public static class FeedEntry implements BaseColumns {
+    public static class FoodEntry implements BaseColumns {
         public static final String TABLE_NAME = "foods";
-        public static final String CALORIES = "calories";
         public static final String NAME = "name";
+        public static final String CALORIES = "calories";
     }
 }

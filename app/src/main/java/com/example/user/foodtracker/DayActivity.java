@@ -1,6 +1,7 @@
 package com.example.user.foodtracker;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -25,6 +26,9 @@ public class DayActivity extends AppCompatActivity {
         android.util.Log.d("Food Tracker", "DayActivity onCreate called");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day);
+
+        DbHelper dbHelper = new DbHelper(this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         mDayInfoText = (TextView) findViewById(R.id.day_info_text);
         Intent intent = getIntent();
