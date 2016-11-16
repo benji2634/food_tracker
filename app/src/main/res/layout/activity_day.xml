@@ -3,94 +3,107 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/day_info_text"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="20dp"
-        android:text=""
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/calorie_limit"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="20dp"
-        android:text=""
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/breakfast_header"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="20dp"
-        android:text="@string/breakfast_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/day_info_text"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginTop="20dp"
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/breakfast_foods"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="20dp"
-        android:text=""
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/calorie_limit"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginTop="20dp"
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/lunch_header"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="20dp"
-        android:text="@string/lunch_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/breakfast_header"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginTop="20dp"
+                android:text="@string/breakfast_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/lunch_foods"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="20dp"
-        android:text=""
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/breakfast_foods"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginTop="20dp"
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/dinner_header"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="20dp"
-        android:text="@string/dinner_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/lunch_header"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginTop="20dp"
+                android:text="@string/lunch_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/dinner_foods"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="20dp"
-        android:text=""
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/lunch_foods"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginTop="20dp"
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/snack_header"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="20dp"
-        android:text="@string/snack_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/dinner_header"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginTop="20dp"
+                android:text="@string/dinner_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/snack_foods"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="20dp"
-        android:text=""
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/dinner_foods"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginTop="20dp"
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/snack_header"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginTop="20dp"
+                android:text="@string/snack_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/snack_foods"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginTop="20dp"
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
