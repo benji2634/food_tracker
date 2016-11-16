@@ -1,5 +1,6 @@
 package com.example.user.foodtracker;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -29,6 +30,11 @@ public class DayActivity extends AppCompatActivity {
 
         DbHelper dbHelper = new DbHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(DbContract.FoodEntry.NAME, "name");
+        values.put(DbContract.FoodEntry.CALORIES, "calories");
 
         mDayInfoText = (TextView) findViewById(R.id.day_info_text);
         Intent intent = getIntent();
