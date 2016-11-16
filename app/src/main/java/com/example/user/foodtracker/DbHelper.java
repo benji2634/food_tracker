@@ -1,5 +1,6 @@
 package com.example.user.foodtracker;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -41,5 +42,20 @@ public class DbHelper extends SQLiteOpenHelper {
 
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         onUpgrade(db, oldVersion, newVersion);
+    }
+
+    // Add a new row to the database
+    public void addFood(Food food) {
+        ContentValues values = new ContentValues();
+        values.put(DbContract.FoodEntry.NAME, food.getName());
+        values.put(DbContract.FoodEntry.CALORIES, food.getCalories());
+        SQLiteDatabase db = getWritableDatabase();
+        db.insert(DbContract.FoodEntry.FOODS, null, values);
+        db.close();
+    }
+
+    public void deleteFood(String foodName) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM " + DbContract.FoodEntry.NAME + "WHERE " + DbContract.FoodEntry.NAME + "=\"" + foodName + "\";" );
     }
 }
