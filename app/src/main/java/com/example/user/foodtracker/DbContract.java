@@ -13,7 +13,7 @@ public final class DbContract {
 
     /* Inner class that defines the table contents */
     public static class FoodEntry implements BaseColumns {
-        public static final String TABLE_NAME = "foods";
+        public static final String FOODS = "foods";
         public static final String NAME = "name";
         public static final String CALORIES = "calories";
     }

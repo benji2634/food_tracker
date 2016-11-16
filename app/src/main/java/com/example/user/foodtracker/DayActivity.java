@@ -36,6 +36,8 @@ public class DayActivity extends AppCompatActivity {
         values.put(DbContract.FoodEntry.NAME, "name");
         values.put(DbContract.FoodEntry.CALORIES, "calories");
 
+        long newRowId = db.insert(DbContract.FoodEntry.FOODS, null, values);
+
         mDayInfoText = (TextView) findViewById(R.id.day_info_text);
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
